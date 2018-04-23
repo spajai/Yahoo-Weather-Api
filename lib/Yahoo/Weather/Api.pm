@@ -10,10 +10,10 @@ Yahoo::Weather::Api - The great new 2018 Yahoo::Weather::Api
 
 =head1 VERSION
 
-Version 1.00
+Version 1.10
 
 =cut
-our $VERSION = '1.00';
+our $VERSION = '1.10';
 
 use URL::Builder qw (build_url);
 use Carp;
@@ -30,7 +30,7 @@ Refer more here L<https://developer.yahoo.com/weather/>
     use Yahoo::Weather::Api;
 
     my $api = Yahoo::Weather::Api->new();
-    print  $api->_get_data({ 'search' => 'Palo Alto, CA, US' });
+    print  $api->get_weather_data({ 'search' => 'Palo Alto, CA, US' });
 
                             or
 

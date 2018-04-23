@@ -25,7 +25,8 @@
             "JSON" : "2.0",
             "JSON::Parse" : "0",
             "Test::More" : "0",
-            "URL::Builder" : "0",
+            "URL::Builder" : "0.06",
+            "XML::LibXML" : "0",
             "XML::Validate" : "0"
          }
       },
@@ -44,5 +45,5 @@
       }
    },
    "release_status" : "stable",
-   "version" : "1.00"
+   "version" : "1.10"
 }

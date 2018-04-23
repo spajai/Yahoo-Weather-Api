@@ -14,12 +14,21 @@ WriteMakefile(
     CONFIGURE_REQUIRES => {
         'ExtUtils::MakeMaker' => 0,
     },
+    TEST_REQUIRES => {
+        'Test::More'     => 0,
+        'JSON'           => '2.0',
+        'XML::Validate'  => 0,
+        'JSON::Parse'    => 0,
+        'URL::Builder'   => '0.06',
+        'XML::LibXML'    => 0,
+    },
     BUILD_REQUIRES => {
         'Test::More'     => 0,
         'JSON'           => '2.0',
         'XML::Validate'  => 0,
         'JSON::Parse'    => 0,
-        'URL::Builder'   => 0,
+        'URL::Builder'   => '0.06',
+        'XML::LibXML'    => 0,
     },
     PREREQ_PM => {
         'LWP::UserAgent' => 0,
