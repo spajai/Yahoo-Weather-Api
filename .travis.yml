@@ -2,7 +2,7 @@
 # https://github.com/briandfoy/brians_perl_modules_travis_config
 # This file is licensed under the MIT license
 
-sudo: false
+sudo: enable
 
 language: perl
 perl:
@@ -17,20 +17,24 @@ perl:
     - "5.26"
 
 os:
-  - linux
+#  - linux
   - osx
 
 env:
     - OLD_DEVEL_COVER=0
 
-matrix:
-    include:
-        - perl: 5.8
-        - env: OLD_DEVEL_COVER=1
-    allow_failures:
-        - os: osx
+#matrix:
+#    allow_failures:
+#        - os: osx
 
 before_install:
+    - brew install cpan
+    - brew install cpanm
+    - sudo cpan App::perlbrew
+    - perlbrew init
+    - export PERLBREW_ROOT=${HOME}/perl5/perlbrew
+    - curl -k -L https://raw.github.com/gist/962406/93cd90f5e6c6a86073afb3815f0ea06c3c9e99ed/patchperl -o $PERLBREW_ROOT/bin/patchperl
+    - chmod +x $_
     - git clone git://github.com/travis-perl/helpers ~/travis-perl-helpers
     - source ~/travis-perl-helpers/init --auto
 
