@@ -23,12 +23,11 @@ os:
 env:
     - OLD_DEVEL_COVER=0
 
-#matrix:
-#    allow_failures:
-#        - os: osx
+matrix:
+    allow_failures:
+        - os: osx
 
 before_install:
-    - brew install cpanm
     - brew doctor
     - brew update
     - mv ~/.cpan ~/.cpan.bak
