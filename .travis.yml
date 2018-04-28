@@ -28,8 +28,12 @@ env:
 #        - os: osx
 
 before_install:
-    - brew install cpan
     - brew install cpanm
+    - brew doctor
+    - brew update
+    - mv ~/.cpan ~/.cpan.bak
+    - cpan config
+    - brew install cpan
     - sudo cpan App::perlbrew
     - perlbrew init
     - export PERLBREW_ROOT=${HOME}/perl5/perlbrew
